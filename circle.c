@@ -8,13 +8,15 @@
 #include <stdio.h>
 #include <math.h>
 
+#define PauseTime 0
+
 void display(void);
 void idleAnime(void);
 void keyboard(unsigned char key, int x, int y);
 void drawCircle(int x, int y, int r, float red, float green, float blue);
 
-int gridX=400;
-int gridY=400;
+int gridX=600;
+int gridY=450;
 int counter=10;
 
 #define maxCircleR 50
@@ -77,7 +79,7 @@ void idleAnime(void){
 		//		drawCircle(x[i],y[i], r[i]-5, red[i], green[i], blue[i]);
 
 	}
-	usleep(111000);
+	usleep(PauseTime);
 }
 void display(void) {
 	glLineWidth(2.0);
