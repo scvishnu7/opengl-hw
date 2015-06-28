@@ -1,4 +1,4 @@
-ogl_circle
+opengl-hw
 ==========
 
-Learning OpenGL with this making of random circle
+Learning OpenGL by doing various silly animi.
