@@ -9,32 +9,39 @@
 #define gridy 300
 
 int rsize=gridx/30;
-int ssize=gridx/50; 
+//int ssize=gridx/50; 
+int ssize=15; 
+
 int posi; 
-int one4thy = gridy/2-20;
-int three4thy = gridy/2+20;
+//int one4thy = gridy/2-20;
+//int three4thy = gridy/2+20;
+
+int one4thy = gridy/4;
+int three4thy = gridy*3/4;
+
+
 
 
 void drawSquare(int posx, int posy){
-	int dy=1;
+	int dy=5;
 	glBegin(GL_POLYGON);
-		glVertex2d(posx-ssize, posy-ssize-dy);
-      		glVertex2d(posx-ssize, posy+ssize+dy);
-      		glVertex2d(posx+ssize, posy+ssize+dy);
-		glVertex2d(posx+ssize, posy-ssize-dy);
+		glVertex2d(posx-ssize, posy-ssize+dy);
+      		glVertex2d(posx-ssize, posy+ssize-dy);
+      		glVertex2d(posx+ssize, posy+ssize-dy);
+		glVertex2d(posx+ssize, posy-ssize+dy);
 	glEnd();
 	glFlush();
 }
 
 void drawYellowSquare(int posx, int posy) {
-	glColor3f(0,0,0.5);
+	glColor3f(1,1,0);
 	drawSquare(posx, posy);
 	glColor3f(1,1,1);
 
 }
 
 void drawBlueSquare(int posx, int posy)  {
-	glColor3f(0.5,0.5,0);
+	glColor3f(0, 0, 1);
 	drawSquare(posx, posy);
 	glColor3f(1,1,1);
 
@@ -118,7 +125,7 @@ drawYellowSquare(posi,one4thy);
 drawBlueSquare(posi,three4thy);
 
 glFlush();
-usleep(129000);
+usleep(159000);
 
 }
  
@@ -128,7 +135,7 @@ int main(int argc, char** argv) {
    glutInit(&argc, argv);          // Initialize GLUT
    glutInitWindowSize(hres, vres);   // Set the window's initial width & height
    glutInitWindowPosition(350,0); // Position the window's initial top-left corner
-   glutCreateWindow("Yello Blue Boxes");  // Create window with the given title
+   glutCreateWindow("Yellow Blue Boxes");  // Create window with the given title
    glutDisplayFunc(display);       // Register callback handler for window re-paint event
    glutIdleFunc(idleAnimiation);
    initGL();                       // Our own OpenGL initialization
